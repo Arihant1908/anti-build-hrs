@@ -1,0 +1,24 @@
+# Groww HDFC RAG FAQ Chatbot — Dependencies
+# Install: pip install -r requirements.txt
+
+# UI
+streamlit
+
+# Vector store
+chromadb
+
+# Embeddings
+sentence-transformers
+
+# LLM
+mistralai
+
+# Web scraping
+requests
+beautifulsoup4
+
+# Config
+python-dotenv
+
+# Testing
+pytest

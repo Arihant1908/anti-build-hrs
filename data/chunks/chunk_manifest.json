@@ -1,0 +1,10 @@
+{
+  "total_chunks": 221,
+  "files": [
+    "large_cap_chunks.json",
+    "flexi_cap_chunks.json",
+    "elss_chunks.json",
+    "small_cap_chunks.json",
+    "hybrid_chunks.json"
+  ]
+}

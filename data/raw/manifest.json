@@ -1,0 +1,41 @@
+{
+  "scrape_run_timestamp": "2026-09-02T10:17:28.054334+05:30",
+  "total_documents": 5,
+  "documents": [
+    {
+      "fund_name": "HDFC Large Cap Fund Direct Growth",
+      "fund_category": "Large Cap",
+      "url": "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth",
+      "text_length": 8770,
+      "file": "large_cap.json"
+    },
+    {
+      "fund_name": "HDFC Flexi Cap Fund Direct Growth",
+      "fund_category": "Flexi Cap",
+      "url": "https://groww.in/mutual-funds/hdfc-equity-fund-direct-growth",
+      "text_length": 10527,
+      "file": "flexi_cap.json"
+    },
+    {
+      "fund_name": "HDFC ELSS Tax Saver Fund Direct Plan Growth",
+      "fund_category": "ELSS",
+      "url": "https://groww.in/mutual-funds/hdfc-elss-tax-saver-fund-direct-plan-growth",
+      "text_length": 9437,
+      "file": "elss.json"
+    },
+    {
+      "fund_name": "HDFC Small Cap Fund Direct Growth",
+      "fund_category": "Small Cap",
+      "url": "https://groww.in/mutual-funds/hdfc-small-cap-fund-direct-growth",
+      "text_length": 10970,
+      "file": "small_cap.json"
+    },
+    {
+      "fund_name": "HDFC Balanced Advantage Fund Direct Growth",
+      "fund_category": "Hybrid",
+      "url": "https://groww.in/mutual-funds/hdfc-balanced-advantage-fund-direct-growth",
+      "text_length": 35491,
+      "file": "hybrid.json"
+    }
+  ]
+}
