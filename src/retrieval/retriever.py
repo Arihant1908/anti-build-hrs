@@ -23,7 +23,7 @@ class RAGRetriever:
     """
     Orchestrates the retrieval and generation pipeline.
     """
-    def __init__(self, db_path: str = "data/chroma_db"):
+    def __init__(self, db_path: str = None):
         self.pii_filter = PIIFilter()
         self.intent_classifier = IntentClassifier()
         self.prompt_builder = PromptBuilder()
@@ -34,7 +34,10 @@ class RAGRetriever:
         print(f"Loading query embedding model '{self.model_name}'...")
         self.encoder = SentenceTransformer(self.model_name)
         
-        # Connect to ChromaDB
+        # Connect to ChromaDB — resolve path relative to project root
+        if db_path is None:
+            project_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+            db_path = os.path.join(project_root, "data", "chroma_db")
         self.chroma_client = chromadb.PersistentClient(path=db_path)
         self.collection = self.chroma_client.get_collection(name="groww_funds")
         
