@@ -1,8 +1,7 @@
 # Environment variables (contains API keys)
 .env
 
-# ChromaDB persistent storage (regenerable)
-data/chroma_db/
+# ChromaDB persistent storage (included for deployment — < 1MB)
 
 # Python
 __pycache__/
