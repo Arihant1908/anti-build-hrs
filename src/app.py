@@ -19,6 +19,12 @@ from src.retrieval.retriever import RAGRetriever
 def get_retriever():
     return RAGRetriever()
 
+@st.cache_data(show_spinner=False, ttl=3600)
+def get_cached_answer(query: str) -> str:
+    retriever = get_retriever()
+    result = retriever.process_query(query)
+    return result.answer
+
 def main():
     # Configure page
     st.set_page_config(
@@ -101,9 +107,7 @@ def main():
         with st.chat_message("assistant"):
             with st.spinner("Searching knowledge base..."):
                 try:
-                    retriever = get_retriever()
-                    result = retriever.process_query(prompt)
-                    response = result.answer
+                    response = get_cached_answer(prompt)
                     st.markdown(response)
                     st.session_state.messages.append({"role": "assistant", "content": response})
                 except Exception as e:

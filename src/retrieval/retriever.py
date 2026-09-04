@@ -163,6 +163,13 @@ class RAGRetriever:
         # 6. Generate Answer
         answer = self.llm_client.generate_answer(prompt)
         
+        # Graceful fallback: If LLM is completely rate-limited after all retries, return the raw facts
+        if "Status 429" in answer or "Rate limit" in answer or "Maximum retries" in answer:
+            fallback = "⚠️ **High Traffic / Rate Limit:** My AI generation provider is currently exhausted (free tier limit). \n\nHowever, I retrieved the following exact facts from the official FAQs for your query:\n\n"
+            for i, chunk in enumerate(valid_chunks):
+                fallback += f"**Fact {i+1}:** {chunk.strip()}\n\n"
+            answer = fallback
+        
         return RetrievalResult(
             answer=answer,
             chunks=valid_chunks,
